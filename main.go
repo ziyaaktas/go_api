@@ -106,6 +106,6 @@ func main() {
     defer session.Close()
 
     router := mux.NewRouter()
-    router.Handle("/companies", Middleware(http.HandlerFunc(GetCompaniesEndpoint(session)))).Methods("GET")
+    router.Handle("/go/companies", Middleware(http.HandlerFunc(GetCompaniesEndpoint(session)))).Methods("GET")
     log.Fatal(http.ListenAndServe(":12345", router))
 }
